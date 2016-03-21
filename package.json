@@ -1,0 +1,35 @@
+{
+    "name": "generator-p4",
+    "version": "0.1.2",
+    "description": "Este é o scaffold do Foundation 6 usado na Plano4.com.br baseado no projeto de JULIAN ĆWIRKO [Foundation 5 and Yeoman generator-zf5](http://julian.io/foundation-5-and-yeoman/)",
+    "files": [
+        "app"
+    ],
+    "keywords": [
+        "yeoman-generator",
+        "Yeoman Generator",
+        "Zurb Foundation 6",
+        "Yeoman",
+        "Foundation 6",
+        "SASS",
+        "Foundation SASS"
+    ],
+    "dependencies": {
+        "yeoman-generator": "^0.20.3"
+    },
+    "main": "index.js",
+    "devDependencies": {},
+    "scripts": {
+        "test": "mocha"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/williambeto/generator-p4.git"
+    },
+    "author": "José Willams",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/williambeto/generator-p4/issues"
+    },
+    "homepage": "https://github.com/williambeto/generator-p4#readme"
+}

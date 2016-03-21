@@ -1,0 +1,32 @@
+@charset 'UTF-8';
+
+/* Architecture for a Sass Project */
+// base/ – contains global styles, such as resets, typography, colors, etc.
+// components/ – contains each self-contained component in its own .scss partial
+// layout/ – contains styling for larger layout components; e.g. nav, header, footer, etc.
+// pages/ – contains page-specific styling, if necessary
+// themes/ – contains styling for different themes
+// utils/ – contains global mixins, functions, helper selectors, etc.
+// vendors/ – contains 3rd-party styles, mixins, etc.
+// _appstyles.scss – output file that brings together all of the above parts
+// _settings.scss - includes a set of variables that modify core structural or visual styles  which will allow you to modify the default styles of Foundation. 
+// app.scss – output file that brings together all of the above parts
+
+
+// Vendor Dependencies */
+@import "compass";
+
+// Authored Dependencies
+//@import '_utils/_mixins';
+//@import '_base/_config';
+//@import "_base/_typography";
+
+// Layout Dependencies
+//@import "_layout/_layout";
+
+//@import '_components/_components';
+
+
+
+
+
