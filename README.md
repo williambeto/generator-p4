@@ -26,7 +26,7 @@ Instale o Yeoman:
 npm install -g yo
 ```
 
-Instale o generator-p4 [npm](https://www.npmjs.com/package/generator-p4):
+Instale o generator-p4 [npm](https://www.npmjs.com/package/generator-p4): https://www.npmjs.com/package/generator-p4
 
 ```
 npm install -g generator-p4
