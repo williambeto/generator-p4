@@ -10,11 +10,11 @@ var P4Generator = yeoman.generators.Base.extend({
         this.config.save();
 
         this.on('end', function () {
-            //console.log('ACABOU!!');
-            //this.installDependencies();
+            if (!this.options['skip-install']) {
+                this.installDependencies();
+            }
         });
     },
-    
     appFiles: function () {
         mkdirp('dist');
         mkdirp('app');
@@ -36,7 +36,6 @@ var P4Generator = yeoman.generators.Base.extend({
         this.template('scss/_appstyles.scss', 'app/scss/_appstyles.scss');
         this.copy('js/app.js', 'app/js/app.js');
     },
-    
     install: function () {
         this.installDependencies();
     }

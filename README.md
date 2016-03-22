@@ -1,4 +1,4 @@
-# Foundation 6 + Sass com Libsass + Grunt
+# Foundation 6 + Sass com Libsass + Grunt + BrowserSync Live Reloading
 
 Este é o scaffold do Zurb Foundation 6 usado na Plano4.com.br
 
@@ -20,16 +20,40 @@ Este é o scaffold do Zurb Foundation 6 usado na Plano4.com.br
 
 #### Instalação
 
+Você precisa ter o node, npm , git e algumas outras dependências instaladas:
+
+Instale o [nodejs](https://nodejs.org/): https://nodejs.org/
+
+Instale o [git](https://git-scm.com/): https://git-scm.com/
+
+
+Instale o npm
+
+```
+$ npm install -g npm
+```
+
+Instale o bower
+
+```
+$ npm install -g bower
+```
+
+Instale o grunt
+```
+$ npm install -g grunt-cli
+```
+
 Instale o Yeoman:
 
 ```
-npm install -g yo
+$ npm install -g yo
 ```
 
-Instale o generator-p4 [npm](https://www.npmjs.com/package/generator-p4): https://www.npmjs.com/package/generator-p4
+Instale o [generator-p4](https://www.npmjs.com/package/generator-p4): https://www.npmjs.com/package/generator-p4
 
 ```
-npm install -g generator-p4
+$ npm install -g generator-p4
 ```
 
 #### Criando o Projeto
@@ -37,7 +61,7 @@ npm install -g generator-p4
 Navegue até a pasta do projeto e inicialize o generator-p4:
 
 ```
-yo p4
+$ yo p4
 ```
 
 #### Iniciando o Projeto
@@ -45,17 +69,17 @@ yo p4
 Navegue até a pasta do projeto e digite `grunt` para iniciar:
 
 ```
-grunt
+$ grunt
 ```
 
 Para exportar os arquivos para produção:
 
 ```
-grunt publish
+$ grunt publish
 ```
 
 A versão finalizada será exportada para a pasta `dist`
 
 ## Licença
 
-MIT
+[Licença MIT](https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT)

@@ -3,11 +3,7 @@
     <preferences xmlns="http://www.netbeans.org/ns/auxiliary-configuration-preferences/1">
         <module name="org-netbeans-modules-css-prep">
             <property name="sass.configured" value="true"/>
-            <property name="sass.enabled" value="true"/>
-            <property name="sass.mappings" value="/scss:/css"/>
         </module>
-        <module name="org-netbeans-modules-javascript2-requirejs"/>
-        <module name="org-netbeans-modules-html-editor-lib"/>
         <module name="org-netbeans-modules-editor-indent">
             <node name="CodeStyle"/>
         </module>
