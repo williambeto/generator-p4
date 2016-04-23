@@ -1,32 +1,47 @@
 @charset 'UTF-8';
 
-/* Architecture for a Sass Project */
-// base/ – contains global styles, such as resets, typography, colors, etc.
-// components/ – contains each self-contained component in its own .scss partial
-// layout/ – contains styling for larger layout components; e.g. nav, header, footer, etc.
-// pages/ – contains page-specific styling, if necessary
-// themes/ – contains styling for different themes
-// utils/ – contains global mixins, functions, helper selectors, etc.
-// vendors/ – contains 3rd-party styles, mixins, etc.
-// _appstyles.scss – output file that brings together all of the above parts
-// _settings.scss - includes a set of variables that modify core structural or visual styles  which will allow you to modify the default styles of Foundation. 
-// app.scss – output file that brings together all of the above parts
+/* Sass Boilerplate - Architecture for a Sass Project 
+* This is a sample project using the 7-1 architecture pattern and sticking to Sass Guidelines writing conventions.
+* see https://sass-guidelin.es/#architecture
+*/
 
 
-// Vendor Dependencies */
+// compass-mixins dependencies */
 @import "compass";
 
-// Authored Dependencies
-//@import '_utils/_mixins';
-//@import '_base/_config';
-//@import "_base/_typography";
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
 
-// Layout Dependencies
-//@import "_layout/_layout";
+// 2. Vendors
+@import
+  'vendor/magnific-popup';
 
-// Components Dependencies
-//@import '_components/_components';
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
 
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/footer';
+
+// 5. Components
+@import
+  'components/button';
+
+// 6. Page-specific styles
+@import
+  'pages/home';
+
+// 7. Themes
+@import
+  'themes/default';
 
 
 

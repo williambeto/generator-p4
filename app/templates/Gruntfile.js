@@ -61,7 +61,7 @@ module.exports = function (grunt) {
                 files: [{
                         expand: true,
                         cwd: '<%%= app %>/',
-                        src: ['fonts/**', '**/*.html','**/*.php', '!**/*.scss', '!bower_components/**'],
+                        src: ['fonts/**', '**/*.html', '**/*.php', '!**/*.scss', '!bower_components/**'],
                         dest: '<%%= dist %>/'
                     }, {
                         expand: true,
@@ -134,6 +134,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('compile-sass', ['sass', 'postcss']);
     grunt.registerTask('grunt-browser-sync');
-    grunt.registerTask('default', ['compile-sass', 'browserSync','watch']);
+    grunt.registerTask('default', ['compile-sass', 'browserSync', 'watch']);
     grunt.registerTask('publish', ['compile-sass', 'clean:dist', 'useminPrepare', 'copy:dist', 'newer:imagemin', 'concat', 'cssmin', 'uglify', 'usemin']);
 };
