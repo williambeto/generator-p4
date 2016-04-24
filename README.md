@@ -26,7 +26,7 @@ Este é o scaffold do Zurb Foundation 6 usado na Plano4.com.br
 
 #### nota impotante:
 ** O BrowserSync está configurado para acessar o servidor local 'http://localhost', caso não queira essa função mude no arquivo 'Gruntfile.js'
-para 'Static File Server' [veja como fazer em:] (https://www.browsersync.io/docs/grunt/#grunt-server)
+para 'Static File Server' [veja como fazer aqui] (https://www.browsersync.io/docs/grunt/#grunt-server)
 
 ** se o 'compass-mixins' não funcionar corretamente por causa da versão do Libsass [issue #84] (https://github.com/Igosuki/compass-mixins/issues/84), 
 substitua o arquivo _lists.scss em 'app/bower_components/compass-mixins/lib/compass/functions/'
