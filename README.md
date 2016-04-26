@@ -30,7 +30,7 @@ para 'Static File Server' [veja como fazer aqui] (https://www.browsersync.io/doc
 
 ** se o 'compass-mixins' não funcionar corretamente por causa da versão do Libsass [issue #84] (https://github.com/Igosuki/compass-mixins/issues/84), 
 substitua o arquivo _lists.scss em 'app/bower_components/compass-mixins/lib/compass/functions/'
-por [esse aqui] (https://raw.githubusercontent.com/Igosuki/compass-mixins/8d93bef3e982cba3420bd16c04a99fabf4e3399e/lib/compass/functions/_lists.scss)
+por [esse aqui] (https://raw.githubusercontent.com/xzyfer/compass-mixins/patch-1/lib/compass/functions/_lists.scss)
 
 Você precisa ter o node, npm , git e algumas outras dependências instaladas:
 
