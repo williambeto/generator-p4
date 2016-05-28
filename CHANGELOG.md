@@ -1,3 +1,6 @@
+#### 0.1.8 (27/05/2016)
+- Bump the dependency to new version
+
 #### 0.1.7 (23/04/2016)
 - added Sass Boilerplate - Architecture for a Sass Project (https://sass-guidelin.es/#architecture)
 
