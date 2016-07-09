@@ -1,3 +1,9 @@
+#### 0.2.0 (09/07/2016)
+- Bump the dependency to new version
+
+#### 0.1.9 (09/07/2016)
+- Bump the dependency to new version
+
 #### 0.1.8 (27/05/2016)
 - Bump the dependency to new version
 
@@ -9,5 +15,3 @@
 
 #### 0.1.5 (22/03/2016)
 - grunt publish (fixed)
-
-
