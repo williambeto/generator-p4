@@ -1,9 +1,9 @@
 {
   "name": "p4_project",
   "dependencies": {
-    "font-awesome": "~4.5.0",
-    "compass-mixins": "^1.0.2",
-    "foundation-sites": "^6.2.1",
+    "font-awesome": "^4.6.3",
+    "compass-mixins": "^0.12.10",
+    "foundation-sites": "^6.2.3",
     "motion-ui": "^1.2.2"
   },
   "devDependencies": {
