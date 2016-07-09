@@ -1,3 +1,47 @@
 // -----------------------------------------------------------------------------
 // This file contains all @font-face declarations, if any.
 // -----------------------------------------------------------------------------
+/*
+//Fonts Files
+@include font-face('Roboto', '../fonts/roboto/roboto-regular-webfont');
+
+// Fonts variables
+$base-font-regular: 'Roboto', Arial, sans-serif;
+
+%base-font-thin {
+    font-family: $base-font-thin;
+    font-weight: 400;
+}
+
+%base-font-light {
+    font-family: $base-font-light;
+    font-weight: 400;
+}
+
+%base-font-regular {
+    font-family: $base-font-regular;
+    font-weight: 400;
+}
+
+%base-font-regular-italic {
+    font-family: $base-font-regular;
+    font-weight: 400;
+    font-style: italic;
+}
+
+%base-font-bold {
+    font-family: $base-font-bold;
+    font-weight: 400;
+}
+
+%base-font-bold-italic {
+    font-family: $base-font-bold-italic;
+    font-weight: 400;
+    font-style: italic;
+}
+
+%base-font-black {
+    font-family: $base-font-black;
+    font-weight: 400;
+}
+*/
