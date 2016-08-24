@@ -13,7 +13,7 @@
     "url": "git+https://github.com/williambeto/generator-p4.git"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.7",
+    "autoprefixer": "^6.4.0",
     "grunt": "^1.0.1",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-clean": "^1.0.0",
@@ -23,13 +23,13 @@
     "grunt-contrib-cssmin": "^1.0.1",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-newer": "^1.2.0",
     "grunt-postcss": "^0.8.0",
-    "grunt-sass": "^1.2.0",
+    "grunt-sass": "^1.2.1",
     "grunt-usemin": "^3.1.1",
-    "load-grunt-tasks": "^3.5.0",
+    "load-grunt-tasks": "^3.5.2",
     "node-sass": "^3.8.0"
   }
 }
