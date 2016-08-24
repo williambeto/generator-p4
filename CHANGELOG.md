@@ -1,3 +1,6 @@
+#### 0.2.1 (23/08/2016)
+- Bump the dependency to new version
+
 #### 0.2.0 (09/07/2016)
 - Bump the dependency to new version
 
