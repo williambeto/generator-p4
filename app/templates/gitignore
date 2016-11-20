@@ -1,4 +1,7 @@
 node_modules
 .tmp
 app/bower_components
+<<<<<<< HEAD
 .netbeans.xml
+=======
+>>>>>>> 5dac9413c0a30b592aa8225df11a1d3f6d558a26

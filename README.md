@@ -8,8 +8,11 @@ Este é o scaffold do Zurb Foundation 6 usado na Plano4.com.br
 
 [![NPM](https://nodei.co/npm/generator-p4.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/generator-p4/)
 
+<<<<<<< HEAD
 [![NPM](https://nodei.co/npm-dl/generator-p4.png)](https://nodei.co/npm/generator-p4/)
 
+=======
+>>>>>>> 5dac9413c0a30b592aa8225df11a1d3f6d558a26
 ## Yo P4!
 * [Zurb Foundation 6] (http://foundation.zurb.com/sites.html)
 * [Motion UI Sass Library] (http://foundation.zurb.com/sites/docs/motion-ui.html)
@@ -94,4 +97,8 @@ A versão finalizada será exportada para a pasta `dist`
 
 ## Licença
 
+<<<<<<< HEAD
 [Licença MIT](https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT)
+=======
+[Licença MIT](https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT)
+>>>>>>> 5dac9413c0a30b592aa8225df11a1d3f6d558a26
