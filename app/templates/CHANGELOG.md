@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 #### 0.2.3 (01/02/2017)
 - Bump the dependency to new version
 
 #### 0.2.2 (20/11/2016)
 - Bump the dependency to new version
 
+=======
+>>>>>>> f9a65b9b8f1708b00a4ce217c9fbf71125a3c739
 #### 0.2.1 (23/08/2016)
 - Bump the dependency to new version
 
