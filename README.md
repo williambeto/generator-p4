@@ -1,5 +1,7 @@
 # Foundation 6 + Sass com Libsass + Grunt + BrowserSync Live Reloading
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/williambeto/generator-p4.svg)](https://greenkeeper.io/)
+
 Este é o scaffold do Zurb Foundation 6 usado na Plano4.com.br
 
 ### Nota:
