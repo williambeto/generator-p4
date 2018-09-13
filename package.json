@@ -1,7 +1,7 @@
 {
   "name": "generator-p4",
-  "version": "2.0.2",
-  "description": "Yeoman generator for Foundation 6 + Sass + Gulp + Webpack + PHP",
+  "version": "2.0.3",
+  "description": "Yeoman generator for Foundation 6 + Sass + Gulp + Webpack + Composer + PHP",
   "homepage": "https://github.com/williambeto/generator-p4",
   "author": {
     "name": "José Willams",
@@ -13,7 +13,6 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "kw",
     "yeoman-generator",
     "foundation 6",
     "zurb",
@@ -27,7 +26,9 @@
     "browsersync",
     "responsive",
     "front-end",
-    "framework"
+    "framework",
+    "composer",
+    "php"
   ],
   "devDependencies": {
     "yeoman-test": "^1.7.0",
@@ -43,7 +44,7 @@
     "jest": "^22.0.6"
   },
   "engines": {
-    "npm": ">= 4.0.0"
+    "npm": ">= 6.0.0"
   },
   "dependencies": {
     "yeoman-generator": "^2.0.1",

@@ -2,7 +2,7 @@
    "name": "<%= name %>",
    "title": "<%= name %>",
    "version": "0.0.1",
-   "description": "Static starter base project based on Foundation 6",
+   "description": "Static starter base project based on Foundation 6 + Sass + Gulp + Webpack + Composer + PHP",
    "license": "MIT",
    "main": "gulpfile.babel.js",
    "scripts": {
@@ -10,14 +10,32 @@
       "dev": "gulp build --dev",
       "build": "gulp build --production",
       "package": "gulp package --production",
-      "postinstall": "gulp"
+      "postinstall": "composer-runner -- install --prefer-dist && gulp"
    },
    "keywords": [
       "Foundation",
       "semantic",
       "mobile first",
-      "responsive"
+      "responsive",
+      "yeoman-generator",
+      "foundation 6",
+      "zurb",
+      "foundation",
+      "zurb foundation 6",
+      "sass",
+      "scss",
+      "libsass",
+      "gulp",
+      "webpack",
+      "browsersync",
+      "front-end",
+      "framework",
+      "composer",
+      "php"
    ],
+   "engines": {
+    "composer": "1.7.2"
+  },
    "dependencies": {
       "@fortawesome/fontawesome-free": ">=5.3.1",
       "foundation-datepicker": ">=1.5.6",
@@ -63,6 +81,7 @@
       "json-loader": ">=0.5.7",
       "modernizr": ">=3.6.0",
       "modernizr-loader": ">=1.0.1",
+      "node-composer-runner": ">=0.3.0",
       "postcss-loader": ">=3.0.0",
       "rimraf": ">=2.6.2",
       "sass-loader": ">=7.1.0",

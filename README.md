@@ -3,7 +3,7 @@
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) ,  [Gulp](https://gulpjs.com/) and generator-p4 using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/), [Composer](https://getcomposer.org/download/) and a [PHP Server](https://www.apachefriends.org/)).
+First, install [Yeoman](http://yeoman.io) ,  [Gulp](https://gulpjs.com/) and generator-p4 using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/) and a [PHP Server](https://www.apachefriends.org/)).
 
 ```bash
 npm install -g yo
