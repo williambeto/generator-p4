@@ -82,29 +82,6 @@ function compress_page($buffer) {
 }
 
 
-/**
- * Função retorna dados de media do instagram
- * @param number $user_id
- * @param string $access_token
- * @param number $count
- * @return array $jsonData
- */
-function get_instagram_media($user_id = 1606452659, $access_token = '1606452659.1677ed0.bc14e6751ab0453d8aeecfc9c46380a1', $count = 6) {
-    //https://www.instagram.com/developer/endpoints/users/
-    $url = 'https://api.instagram.com/v1/users/' . $user_id . '/media/recent/?access_token=' . $access_token . '&count=' . $count;
-    //cache the results
-    $cache = './' . sha1($url) . '.json';
-    if (file_exists($cache) && filemtime($cache) > time() - 60 * 60) {
-        // If a cache file exists, and it is newer than 1 hour, use it
-        $jsonData = json_decode(file_get_contents($cache));
-    } else {
-        $jsonData = json_decode((file_get_contents($url)));
-        file_put_contents($cache, json_encode($jsonData));
-    }
-    return $jsonData;
-}
-
-
 $categorias = array('Feminina', 'Intantil', 'Fantasia');
 $colecoes = array(
     array(

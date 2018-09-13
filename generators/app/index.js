@@ -24,7 +24,6 @@ module.exports = class extends Generator {
     this.fs.delete(this.destinationPath('gitignore'));
     this.fs.delete(this.destinationPath('babelrc'));
     this.fs.delete(this.destinationPath('modernizrrc'));
-    this.fs.delete(this.destinationPath('bowerrc'));
     this.fs.delete(this.destinationPath('_config.yml'));
     this.fs.delete(this.destinationPath('_package.json'));
 

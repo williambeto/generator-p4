@@ -1,9 +1,7 @@
 <?php
 include './functions.php';
 /*  start the output buffer  */
-//ob_start('compress_page');
-/*  xhtml code below  */
-//var_dump($page_name);
+ob_start('compress_page');
 ?>
 <!doctype html>
 <html class="no-js" lang="pt-br">
@@ -57,10 +55,6 @@ include './functions.php';
 
     <!-- Global Stylesheet -->
     <link rel="stylesheet" href="dist/assets/css/app.min.css">
-
-    <?php if ('contato' === $page_name): ?>
-      <script src='https://www.google.com/recaptcha/api.js'></script>
-    <?php endif; ?>
 
   </head>
 

@@ -1,9 +1,8 @@
 {
    "name": "<%= name %>",
    "title": "<%= name %>",
-   "version": "1.0.0",
+   "version": "0.0.1",
    "description": "Static starter base project based on Foundation 6",
-   "homepage": "https://williambeto@bitbucket.org/neurateam/scaffolding-front-end.git",
    "license": "MIT",
    "main": "gulpfile.babel.js",
    "scripts": {
@@ -74,9 +73,5 @@
       "webpack": ">=4.18.0",
       "webpack-stream": ">=5.1.1",
       "yargs": ">=12.0.2"
-   },
-   "repository": {
-      "type": "git",
-      "url": "https://williambeto@bitbucket.org/neurateam/scaffolding-front-end.git"
    }
 }

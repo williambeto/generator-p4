@@ -91,4 +91,4 @@
 </html>
 <?php
 /*  end the buffer, echo the page content  */
-//ob_end_flush();
+ob_end_flush();

@@ -1,53 +1,33 @@
 @charset "UTF-8";
 
-/**
- * Third-party libraries
- */
-
-/* ==========================================================================
-   Settings
-   ========================================================================== */
+/* Settings */
 @import "settings/variables";
 
-/**
- * Functions, mixins etc.
- */
+/* Functions, mixins etc. */
 @import "tools/functions";
 @import "tools/mixins";
 
-/* ==========================================================================
-   Vendors
-   ========================================================================== */
+/* Base / Generic */
+@import 'base/fonts';
+@import 'base/typography';
+
+/* Vendor */
 @import 'vendors/font-awesome';
 @import 'vendors/magnific-popup';
 @import 'vendors/owl-carousel';
 @import 'vendors/datepicker';
 
-
-/* ==========================================================================
-   Base / Generic
-   ========================================================================== */
-@import 'base/fonts';
-@import 'base/typography';
-
-/* ==========================================================================
-   Elements
-   ========================================================================== */
+/* Elements */
 @import 'elements/header';
 @import 'elements/logo';
 @import 'elements/primary-menu';
 @import 'elements/footer';
 
-
-/* ==========================================================================
-   Pages
-   ========================================================================== */
+/* Pages */
 @import 'pages/template';
 @import 'pages/home';
 @import 'pages/colecoes';
 
-/* ==========================================================================
-   Components
-   ========================================================================== */
+/* Components */
 @import 'components/buttons';
 @import 'components/forms';

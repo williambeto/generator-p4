@@ -41,7 +41,7 @@ Choose one of the following setups for local development:
 
 ## License
 
-MIT © [José Willams](home)
+MIT © [José Willams](https://josewillams.com/)
 
 [npm-image]: https://badge.fury.io/js/generator-p4.svg
 [npm-url]: https://npmjs.org/package/generator-p4
