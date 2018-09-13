@@ -18,17 +18,17 @@ ob_start('compress_page');
     <meta property="og:url" content="<?php echo $projetc_data['site_url'] ?>">
     <meta property="og:type" content="website">
     <meta property="og:title" content="<?php echo $projetc_data['site_name'] ?>">
-    <meta property="og:image" content="<?php echo $projetc_data['site_url'] ?>/dist/assets/images/apoio/social-banner.jpg">
+    <meta property="og:image" content="<?php echo $projetc_data['site_url'] ?>/dist/assets/images/apoio/banner-1920x645.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1920">
-    <meta property="og:image:height" content="700">
+    <meta property="og:image:height" content="645">
     <meta property="og:description" content="<?php echo $projetc_data['site_description'] ?>">
     <meta property="og:site_name" content="<?php echo $projetc_data['site_name'] ?>">
 
     <!-- Social: Google+ / Schema.org  -->
     <meta itemprop="name" content="<?php echo $projetc_data['site_name'] ?>">
     <meta itemprop="description" content="<?php echo $projetc_data['site_description'] ?>">
-    <meta itemprop="image" content="<?php echo $projetc_data['site_url'] ?>/dist/assets/images/logo/logo-instituto.svg">
+    <meta itemprop="image" content="<?php echo $projetc_data['site_url'] ?>/dist/assets/images/apoio/banner-1920x645.jpg">
 
     <!-- favicon -->
     <link rel="shortcut icon" href="dist/assets/images/favicon/favicon.ico" type="image/x-icon">
@@ -58,19 +58,9 @@ ob_start('compress_page');
 
   </head>
 
-  <body class="<?php echo $deviceType . ' ' . $page_name; ?>">
+  <body>
     <?php require_once './inc_loading.php'; ?>
-    <!--[if lt IE 9]>
-        <div class="browserupgrade"> Seu navegador está <strong>desatualizado</strong>. 
-            Ele possui falhas de segurança e pode apresentar problemas para exibir este e outros websites.
-            <strong>
-                <a href="http://browsehappy.com/" title="Veja como atualizar o seu navegador" target="_blank">
-                    Veja como atualizar o seu navegador
-                </a>
-            </strong>.
-        </div>
-    <![endif]-->
-
+    
     <header id="header-container" class="header-container">
       <div class="header-content">
         <a href="./" title="<?php echo $projetc_data['site_name'] ?>" class="logo">

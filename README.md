@@ -38,7 +38,6 @@ Choose one of the following setups for local development:
 * [WAMP](http://www.wampserver.com/en/download-wampserver-64bits/) (Windows)
 * [LAMP](https://www.linux.com/learn/easy-lamp-server-installation) (Linux)
 
-
 ## License
 
 MIT © [José Willams](https://josewillams.com/)

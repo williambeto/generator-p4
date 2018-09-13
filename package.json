@@ -1,7 +1,7 @@
 {
   "name": "generator-p4",
-  "version": "2.0.1",
-  "description": "Yeoman generator for Foundation 6 + Sass + Gulp + Webpack + Composer + PHP",
+  "version": "2.0.2",
+  "description": "Yeoman generator for Foundation 6 + Sass + Gulp + Webpack + PHP",
   "homepage": "https://github.com/williambeto/generator-p4",
   "author": {
     "name": "José Willams",
@@ -30,32 +30,30 @@
     "framework"
   ],
   "devDependencies": {
-    "yeoman-test": "^1.9.1",
-    "yeoman-assert": "^3.1.1",
-    "coveralls": "^3.0.2",
-    "nsp": "^3.2.1",
-    "eslint": "^5.5.0",
-    "prettier": "^1.14.2",
+    "yeoman-test": "^1.7.0",
+    "yeoman-assert": "^3.1.0",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.19.1",
+    "prettier": "^1.11.1",
     "husky": "^0.14.3",
-    "lint-staged": "^7.2.2",
-    "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-prettier": "^2.6.2",
-    "eslint-config-xo": "^0.25.0",
-    "jest": "^23.6.0"
+    "lint-staged": "^6.1.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-config-xo": "^0.20.1",
+    "jest": "^22.0.6"
   },
   "engines": {
     "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^3.1.1",
-    "chalk": "^2.4.1",
-    "yosay": "^2.0.2"
+    "yeoman-generator": "^2.0.1",
+    "chalk": "^2.1.0",
+    "yosay": "^2.0.1"
   },
   "jest": {
     "testEnvironment": "node"
   },
   "scripts": {
-    "prepublishOnly": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
     "test": "jest"
