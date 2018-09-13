@@ -1,0 +1,291 @@
+/* remove “X” from search input field */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+input[type=text]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type=text]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+[type="file"], [type="checkbox"], [type="radio"] {
+    margin-bottom: 0;
+}
+
+
+.form-wrap{
+    position: relative;
+    margin-bottom: rem-calc(40);
+    @include breakpoint(large){
+        margin-bottom: rem-calc(0);
+    }
+}
+
+/*
+* label
+*/
+label {
+    position: relative;
+    display: block;
+    position: relative;
+    line-height: 1;
+    margin-bottom: rem-calc(10);
+    @include breakpoint(large){
+        margin-bottom: rem-calc(10);
+    }
+
+    > .fas{
+        position: absolute;
+        left: 0;
+        top: 50%;        
+        transform: translateY(-50%);
+        color: #ccc;
+        font: rem-calc(16);
+
+        &.fa-comment{
+            top: 22px;        
+            transform: translateY(0);
+        }
+    }
+
+    &.is-invalid-label{
+        color: #d2512a;
+        > .fa{
+            color: #d2512a;
+        }
+    }
+}
+
+.help-text{
+    margin: 0;
+}
+
+.form-error {
+    color: #d2512a;
+    font-size: rem-calc(10);
+    font-weight: 400;
+    margin: 0;
+    padding: rem-calc(10 0);
+}
+
+/**/
+@mixin form-element {
+
+    /**/
+    #{text-inputs()},
+    select,
+    textarea{
+        @include font-light;
+        @include letter-spacing(100);
+        box-sizing: border-box;
+        display: block;    
+        width: 100%;
+        height: rem-calc(40);
+        line-height: rem-calc(40);
+        margin: 0;
+        padding: rem-calc(0 20);
+        color: #000;
+        font-size: rem-calc(14);
+        position: relative;
+        appearance: none;
+        box-shadow: none;
+        border-radius: 0;
+        border:0;
+        border-bottom: solid 1px #ccc;
+        background-color: transparent;
+
+        @include breakpoint(large){  
+            height: rem-calc(50);
+            line-height: rem-calc(50);
+            font-size: rem-calc(20);
+            padding: rem-calc(0 30);
+        }
+
+        &.is-invalid-input{
+            color: #d2512a;
+        }
+
+        // Focus state
+        &:focus {
+            outline: none;
+            box-shadow: none;
+            border:0;
+            border-bottom: solid 1px #000;
+            background-color: transparent;
+
+            &::-webkit-input-placeholder {
+                color: #000;
+            }
+
+            &:-moz-placeholder {
+                color: #000;
+            }
+
+            &::-moz-placeholder {
+                color: #000;
+            }
+
+            &:-ms-input-placeholder {
+                color: #000;
+            }
+        }
+
+        &::-webkit-input-placeholder {
+            @include input-placeholder;
+        }
+
+        &:-moz-placeholder {
+            @include input-placeholder;
+        }
+
+        &::-moz-placeholder {
+            @include input-placeholder;
+        }
+
+        &:-ms-input-placeholder {
+            @include input-placeholder;
+        }
+    }
+
+    textarea{
+        height: rem-calc(140);
+        line-height: 1.2;
+        overflow: hidden;
+        padding-bottom: rem-calc(15);
+        padding-top: rem-calc(15);
+        resize: none;
+
+        @include breakpoint(large){ 
+            height: rem-calc(180);
+        }
+    }
+
+    select{
+        background-position: right -20px center;    
+        @include breakpoint(large){ 
+            background-position: right -30px center;
+        }
+
+        &:focus{
+            outline: none !important;
+        }
+    }
+
+
+
+}
+
+/*
+Gera os estilos do fomulário
+*/
+@include form-element;
+
+
+
+
+/**/
+.form-help-text{
+    color: #818181;
+    display: inline-block;
+    vertical-align: middle;
+    padding: rem-calc(20);
+    font-size: rem-calc(10);
+    @include breakpoint(large){
+        font-size: rem-calc(14);
+        padding: rem-calc(20 40);
+    }
+}
+
+
+
+
+/**/
+.callout{
+    position: relative;
+    &.alert {
+        background-color: #ffe8e6;
+        color: #db2828;
+        border: 1px solid #db2828;
+    }
+
+    &.success {
+        background-color: #e5f9e7;
+        color: #1ebc30;
+        border: 1px solid #1ebc30;
+    }
+}
+
+/* captcha*/
+#rc-imageselect, .g-recaptcha {
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+
+    @include breakpoint(large){
+        transform:scale(1);
+        -webkit-transform:scale(1);
+    }
+} 
+
+
+/**/
+body{
+    position: relative;
+
+    .sending-block {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#000, 0.8);
+        opacity: 0;
+        transform: translate3d(0,0,0);
+        transition: opacity 0.4s, transform 0s 0.4s;
+        transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+        display: block;
+        pointer-events: none;
+        z-index: 1090;
+        font-size: rem-calc(16);
+        text-align: center;
+        color: #fff;
+        @include breakpoint(large){
+            font-size: rem-calc(20);
+        }
+
+        div{
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+
+            > span{
+                display: inline-block;
+                vertical-align: middle;
+                padding-bottom: rem-calc(20);
+            }
+        }
+    }
+
+    &.sending{
+        overflow: hidden !important;
+        .sending-block{
+            pointer-events: all;
+            opacity: 1;
+            transition: opacity 0.8s;
+            transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+        }
+    }
+}

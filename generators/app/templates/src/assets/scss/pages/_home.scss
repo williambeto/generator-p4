@@ -1,0 +1,91 @@
+/*
+** Home
+*/
+@import 'home-slider';
+
+.home-sobre{
+    position: relative;
+    background-color: #000;
+    height: rem-calc(290);
+    // padding-top: (29 / 32) * 100%;
+
+    @include breakpoint(large){
+        height: rem-calc(250);
+        // padding-top: (25 / 118) * 100%;
+    }
+    &:before{
+        content: "";
+        width:rem-calc(350);
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 0.35s ease 0s;
+        background: url('../images/apoio/firula.png') no-repeat 0 0;
+        background-size:cover ;
+        display: none;
+        @include breakpoint(large){
+            display: block;
+        }
+    }
+    .home-sobre-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 0.35s ease 0s;
+        opacity: 0.2;
+        z-index: 1;
+    }
+
+    .home-sobre-content{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: rem-calc(0 50);
+        flex-flow: column;
+        z-index: 5;
+        @include breakpoint(large){
+            padding: rem-calc(0 100);
+            justify-content: flex-end;
+            flex-flow: row nowrap;
+        }
+
+        .title{
+            @include font-semi-light;
+            @include letter-spacing(200);
+            position: relative;
+            line-height: 1.2;
+            text-transform: uppercase;
+            color: #fff;
+            font-size: rem-calc(20);
+            text-align: center;
+            margin: rem-calc(0 0 40 0);
+            @include breakpoint(large) {
+                text-align: left;
+                font-size: rem-calc(30);
+                margin: rem-calc(0 40 0 0);
+            }
+        }
+        .button{
+            background-color: transparent;
+            color: #fff;
+            border:1px solid #fff;
+            &:hover{
+                background-color: #6d4083;
+                color: #fff;
+                outline: 0;
+            }
+        }
+    }
+}

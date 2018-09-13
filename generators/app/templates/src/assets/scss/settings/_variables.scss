@@ -1,0 +1,72 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+/// Regular font family
+/// @type List
+$base-font-family: 'Segoe UI', sans-serif;
+$secondary-font-family: 'Segoe UI',sans-serif;
+$title-font-family: 'Segoe UI',sans-serif;
+
+/// cores do tema
+$text-color: #333 !default;
+$title-color: #000 !default;
+$sub-title-color: #333 !default;
+$brand-color: #85599a !default;
+$brand-color-hover: #85599a !default;
+
+$base-color-1: #33348e !default;
+$base-color-2: #00acec !default;
+$base-color-3: #d76f2c !default;
+$base-color-4: #fff22d !default; 
+
+
+// Social Fills
+$facebook: #3b5998;
+$twitter: #55acee;
+$google: #dd4b39;
+$linkedin: #0077b5;
+$pinterest: #bd081c;
+$tumblr: #36465d;
+$youtube: #cd201f;
+$instagram: #517fa4;
+$vine: #00b488;
+$snapchat: #fffc00;
+$whatsapp: #27ae60;
+
+/*
+* colours
+*/
+$colors:(
+  text-color: $text-color,
+  title-color: $title-color,
+  sub-title-color: $sub-title-color,
+  brand-color: $brand-color,
+  primary: $brand-color,
+  secondary: $text-color,
+  facebook: $facebook,
+  twitter: $twitter,
+  google: $google,
+  linkedin: $linkedin,
+  pinterest: $pinterest,
+  tumblr: $tumblr,
+  youtube: $youtube,
+  instagram: $instagram,
+  vine: $vine,
+  snapchat: $snapchat,
+  whatsapp: $whatsapp,
+  black: #000,
+  white: #fff
+);
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+/// $base-url: 'http://cdn.example.com/assets/';
+$base-url: 'dist/assets/' !default;
+
+/// fontawesome fonts path
+//$fa-font-path:   "../fonts/fontawesome";

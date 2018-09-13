@@ -1,12 +1,19 @@
 {
   "name": "generator-p4",
-  "version": "0.2.5",
-  "description": "Yeoman generator for Foundation 6 + Sass with Libsass + Grunt + BrowserSync",
+  "version": "2.0.0",
+  "description": "Yeoman generator for Foundation 6 + Sass + Gulp + Webpack + Composer + PHP",
+  "homepage": "https://github.com/williambeto/generator-p4",
+  "author": {
+    "name": "José Willams",
+    "email": "williambeto@hotmail.com",
+    "url": "https://josewillams.com/"
+  },
   "files": [
-    "app",
     "generators"
   ],
+  "main": "generators/index.js",
   "keywords": [
+    "kw",
     "yeoman-generator",
     "foundation 6",
     "zurb",
@@ -15,34 +22,79 @@
     "sass",
     "scss",
     "libsass",
-    "grunt",
+    "gulp",
+    "webpack",
     "browsersync",
     "responsive",
     "front-end",
     "framework"
   ],
-  "dependencies": {
-    "yeoman-generator": ">= 0.24.1"
-  },
-  "main": "app/index.js",
   "devDependencies": {
-    "mocha": "*"
+    "yeoman-test": "^1.7.0",
+    "yeoman-assert": "^3.1.0",
+    "coveralls": "^3.0.0",
+    "nsp": "^2.8.0",
+    "eslint": "^4.19.1",
+    "prettier": "^1.11.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.1.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-config-xo": "^0.20.1",
+    "jest": "^22.0.6"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "yeoman-generator": "^2.0.1",
+    "chalk": "^2.1.0",
+    "yosay": "^2.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "scripts": {
-    "test": "mocha"
+    "prepublishOnly": "nsp check",
+    "pretest": "eslint .",
+    "precommit": "lint-staged",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "printWidth": 90
+        }
+      ]
+    },
+    "plugins": [
+      "prettier"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/williambeto/generator-p4.git"
   },
-  "author": {
-    "name": "José Willams",
-    "email": "contato@josewillams.com",
-    "url": "https://github.com/williambeto/"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/williambeto/generator-p4/issues"
-  },
-  "homepage": "https://github.com/williambeto/generator-p4#readme"
+  "license": "MIT"
 }

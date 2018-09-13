@@ -1,0 +1,110 @@
+////
+/// @group tabs
+////
+
+
+/// Adds styles for a tab container. Apply this to a `<ul>`.
+@mixin tabs-container{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;    
+
+    @include breakpoint(large) {
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+
+/// Adds styles for the links within a tab container. Apply this to the `<li>` elements inside a tab container.
+@mixin tabs-title{
+    position: relative;
+
+    @include breakpoint(large) {
+        margin-right: rem-calc(10);
+    }
+
+    &:last-child{
+        margin-right: 0;
+    }
+
+    > a {
+        transition: all 0.5s ease;
+        text-align: center;
+        display: block;
+        line-height: 1.2;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #010101;        
+        border-radius: rem-calc(20);
+        padding: rem-calc(5 10);
+        font-size: rem-calc(10);
+        @include breakpoint(large) {
+            line-height: 1;
+            padding: rem-calc(10 25);
+            font-size: rem-calc(14);
+        }
+
+        &:hover {
+            //background-color: $base-color-1;
+            color: $base-color-2;
+            outline: 0;
+        }
+
+        &:focus,
+            &[aria-selected='true'] {
+            background-color: $base-color-2;
+            color: #fff;
+            box-shadow: 0 0 24px rgba(30,22,18,.15);    
+            outline: 0;
+        }
+    }
+}
+
+/// Adds styles for the wrapper that surrounds a tab group's content panes.
+@mixin tabs-content{
+    border:0;
+    background-color: transparent;
+    color: $text-color;
+    transition: all 0.5s ease;
+}
+
+/// Adds styles for an individual tab content panel within the tab content container.
+@mixin tabs-panel{
+    display: none;
+    padding: rem-calc(30 0);
+
+    @include breakpoint(large) {
+        padding: rem-calc(40 0);
+    }
+
+    &.is-active {
+        display: block;
+    }
+}
+
+@mixin foundation-tabs {
+    .tabs {
+        @include tabs-container;
+    }
+
+    .tabs-title {
+        @include tabs-title;
+    }
+
+    .tabs-content {
+        @include tabs-content;
+    }
+
+    .tabs-panel {
+        @include tabs-panel;
+    }
+}
+
+/* tabs */
+@include foundation-tabs;

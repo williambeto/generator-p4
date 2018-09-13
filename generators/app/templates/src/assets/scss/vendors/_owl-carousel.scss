@@ -1,0 +1,245 @@
+@import 'owl.carousel';
+//@import 'owl.theme.default';
+
+/*
+ * 	Default theme - Owl Carousel CSS File
+ */
+
+$color-base:			#869791 !default;
+$color-white:			#FFF !default;
+$color-gray:			#D6D6D6 !default;
+
+//nav
+
+$nav-color: 			$color-white !default;
+$nav-color-hover:		$color-white !default;
+$nav-font-size: 		14px !default;
+$nav-rounded: 			3px !default;
+$nav-margin: 			5px !default;
+$nav-padding: 			4px 7px !default;
+$nav-background: 		$color-gray !default;
+$nav-background-hover:	$color-base !default;
+$nav-disabled-opacity: 	0.5 !default;
+
+//dots
+
+$dot-width:				10px !default;
+$dot-height:			10px !default;
+$dot-rounded:			30px !default;
+$dot-margin: 			5px 7px !default;
+$dot-background:		$color-gray !default;
+$dot-background-active:	$color-base !default;
+
+
+/* slider block */
+.slider-carousel-wrap{
+  position: relative;
+  padding: rem-calc(0 20);
+  @include breakpoint(large){
+    padding: 0;
+  }
+}
+
+// Styling
+.owl-carousel{
+  position: relative;
+  // Next and Prev buttons
+  .owl-nav {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    line-height: 1;        
+    z-index: 5;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: none;
+
+    //
+    button.owl-prev, 
+    button.owl-next {
+      transition: all 0.3s ease-out;
+      pointer-events: all;
+      outline: 0;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      z-index: 10;
+      line-height: 1;
+      top: 50%;
+      transform: translateY(-50%) ;
+      font-size: rem-calc(50);
+      color: rgba(#fff,0.2);
+
+      @include breakpoint(large){
+        font-size: rem-calc(50);
+      }
+
+      &:hover{
+        transform: scale(1.1,1.1) translateY(-50%);
+        color: #fff;
+      }
+
+      .fa,
+      .fas,
+      .svg-inline--fa{
+        @include absolute-center;
+      }
+    }
+
+    .owl-prev{
+      left: rem-calc(20);
+      text-align: left;
+      @include breakpoint(large){
+        left: rem-calc(50);
+      }
+    }
+
+    .owl-next{
+      right: rem-calc(20);
+      text-align: right;
+      @include breakpoint(large){
+        right: rem-calc(50);
+      }
+    }
+
+    .disabled {
+      opacity: 0;
+      cursor: default;
+      transform: scale(1,1);
+      @include on-event{
+        transform: scale(1,1);
+        color: $brand-color;
+      }
+    }
+  }
+
+  // Styling dots
+  .owl-nav.disabled + .owl-dots {
+    margin: 0;
+  }
+
+  .owl-dots {
+    font-size: 0;
+    padding-top: rem-calc(20);
+    margin: 0;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    @include breakpoint(large){
+      padding-top: rem-calc(30);
+    }
+
+    .owl-dot {
+      display: inline-block;
+      vertical-align: middle;
+      zoom: 1;
+      *display: inline;
+
+      span {
+        width: rem-calc(10);
+        height: rem-calc(10);
+        margin: rem-calc(0 5);
+        background: #ccc;
+        display: block;
+        backface-visibility: visible;
+        transition: all 200ms ease;
+        border-radius: $dot-rounded;
+      }
+
+      &.active{
+        span {
+          width: rem-calc(15);
+          height: rem-calc(15);
+          background: $brand-color;
+        }
+      }
+      &:hover {
+        span {
+          background: $brand-color;
+        }
+      }
+    }
+  }
+}
+
+/**/
+.custom-nav{
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  line-height: 1;        
+  z-index: 5;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: none;
+
+  //
+  .owl-prev, 
+  .owl-next {
+    transition: all 0.3s ease-out;
+    pointer-events: all;
+    outline: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    line-height: 1;
+    top: 50%;
+    transform: translateY(-50%) ;
+    font-size: rem-calc(50);
+    color: rgba(#000,0.2);
+    background-color: red;
+
+    @include breakpoint(large){
+      font-size: rem-calc(50);
+    }
+
+    &:hover{
+      transform: scale(1.1,1.1) translateY(-50%);
+      color: #000;
+    }
+
+    .fa,
+    .fas,
+    .svg-inline--fa{
+      @include absolute-center;
+    }
+
+    &.disabled {
+      opacity: 0;
+      cursor: default;
+      transform: scale(1,1);
+      color: rgba(#000,0.2);
+
+      @include on-event{
+        transform: scale(1,1);
+        color: $brand-color;
+      }
+    }
+  }
+
+  .owl-prev{
+    left: 10px;
+    @include breakpoint(large){
+      left: -50px;
+    }
+  }
+
+  .owl-next{
+    right:10px;
+    @include breakpoint(large){
+      right:-50px;
+    }
+  }
+}

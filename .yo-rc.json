@@ -1,3 +1,9 @@
 {
-  "generator-p4": {}
+  "generator-node": {
+    "promptValues": {
+      "authorName": "José Willams",
+      "authorEmail": "williambeto@hotmail.com",
+      "authorUrl": "home"
+    }
+  }
 }

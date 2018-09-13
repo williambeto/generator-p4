@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('SegoeUIBlack.eot');
+    src: local('Segoe UI Black'), local('SegoeUIBlack'),
+        url('SegoeUIBlack.eot?#iefix') format('embedded-opentype'),
+        url('SegoeUIBlack.woff2') format('woff2'),
+        url('SegoeUIBlack.woff') format('woff'),
+        url('SegoeUIBlack.ttf') format('truetype'),
+        url('SegoeUIBlack.svg#SegoeUIBlack') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+

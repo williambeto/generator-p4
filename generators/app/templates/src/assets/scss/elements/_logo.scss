@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// Logo.
+// -----------------------------------------------------------------------------
+.logo {
+  position: relative;
+ 
+  img {
+    height: rem-calc(37);
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000);
+    transition-property: transform, height, padding-top, padding-left;
+
+    @include breakpoint(large) {
+       height: rem-calc(58);
+    }
+    
+    @include breakpoint(xlarge) {
+      height: auto;
+    }
+  }
+}

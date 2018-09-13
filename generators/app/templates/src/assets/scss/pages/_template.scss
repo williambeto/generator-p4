@@ -1,0 +1,95 @@
+/*
+** Template
+*/
+.main-container {
+    position: relative;
+}
+
+/* Template conteúdo*/
+.content{
+    position: relative;
+}
+
+/* Page header */
+.page-header{
+    position: relative;    
+    background-color: #000;
+    overflow: hidden;
+    //
+    .page-header-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 0s, transform 0.35s ease 0s;
+        opacity: 0.6;
+    }
+    /* title */
+    .page-header-title {
+        @include font-bold;
+        @include letter-spacing(200);
+        font-size: rem-calc(20);
+        color: #fff;
+        margin: 0;
+        height: rem-calc(80);
+        display: flex;
+        align-items: center;
+        line-height: 1;
+        @include breakpoint(large) {
+            font-size: rem-calc(30);
+            height: rem-calc(100);
+        }
+    }
+
+    .page-header-subtitle{
+        margin-top: rem-calc(8);
+        font-weight: 300;
+        font-size: rem-calc(14);
+        color: #fff22d;
+        margin-bottom: 0;
+
+        @include breakpoint(large) {
+            font-size: rem-calc(22);
+        }
+    }
+}
+
+/* */
+.section {
+    position: relative;
+    display: block;
+    padding-top: rem-calc(40);
+    padding-bottom: rem-calc(40);
+    @include breakpoint(large) {
+        padding-top: rem-calc(80);
+        padding-bottom: rem-calc(80);
+    }
+
+    .section-title{        
+        @include font-semi-light;
+        @include letter-spacing(200);
+        position: relative;
+        line-height: 1.2;
+        text-transform: uppercase;
+        color: #000;
+        font-size: rem-calc(20);
+        margin-bottom: rem-calc(40);
+        @include breakpoint(large) {
+            font-size: rem-calc(30);
+            margin-bottom: rem-calc(80);
+        }
+    }
+}
+
+.spaced{
+    padding-top: rem-calc(15);
+    padding-bottom: rem-calc(15);
+    @include breakpoint(large) {
+        padding-top: rem-calc(30);
+        padding-bottom: rem-calc(30);
+    }
+}
