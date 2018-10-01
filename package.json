@@ -39,7 +39,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^6.1.1",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "eslint-config-xo": "^0.20.1",
     "jest": "^22.0.6"
   },
