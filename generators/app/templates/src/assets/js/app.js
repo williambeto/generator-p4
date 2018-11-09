@@ -8,23 +8,22 @@ function requireAll(r) {
 };
 //requireAll(require.context('./behaviors/', true, /\.js$/));
 
-// Modernizr
-import Modernizr from 'modernizr';
 
-//WhatInput
+// WhatInput
 import whatInput from 'what-input';
 
-//Foundation
-import Foundation from './foundation-config';
+// Foundation
+// import Foundation from 'foundation-sites';
+const Foundation = require('foundation-sites');
 
-//Depedências Front-End
-/* descomente a linha abaixo para importar todos os arquivos da pasta behaviors */
-// requireAll(require.context('./behaviors/', true, /\.js$/));
+// If you want to pick and choose which modules to include, comment out the above and uncomment the line below
+// import Foundation from './foundation-config';
 
+// Scripts Front-End
 import './behaviors/app-init';
 import './behaviors/images-loaded';
 import './behaviors/show-menu';
 import './behaviors/maskedinput';
 import './behaviors/carousel-init';
-import './behaviors/isotope-init';
 import './behaviors/magnificPopupInit';
+import './behaviors/datepicker';

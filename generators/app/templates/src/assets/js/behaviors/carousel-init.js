@@ -4,7 +4,7 @@ $(window).on("load", function () {
   const $homeSlider = $('[data-js-slider-home]'),
           $colecoesSlider = $('[data-js-slider-colecoes]');
 
-  /*  */
+  /* counter */
   function navSize(event) {
     const $custom_nav = $('.custom-nav');
     let height = $(event.target).find('.active').find('.colection-item-img').outerHeight(true);
@@ -84,6 +84,7 @@ $(window).on("load", function () {
 
   /* init sliders*/
   function initSliders() {
+    
     // Home Slider
     homeSlider($homeSlider);
     colecoesSlider($colecoesSlider);

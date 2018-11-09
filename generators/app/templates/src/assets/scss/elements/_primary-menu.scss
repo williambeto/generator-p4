@@ -3,12 +3,11 @@
 // -----------------------------------------------------------------------------
 
 /* Shown menu */
-
 body.show-menu {
-    overflow: hidden;
-    .header-container {
-        overflow: visible;
-    }
+  overflow: hidden;
+  .header-container {
+    overflow: visible;
+  }
 }
 
 
@@ -16,124 +15,124 @@ body.show-menu {
 * Nav Menu
 */
 .nav-menu {
-    position: absolute;
-    background-color: #85599a;
-    width: 100%;
-    left: 0;
-    top: rem-calc(58);
-    overflow-x: hidden;
-    overflow-y: auto;
+  position: absolute;
+  background-color: $brand-color;
+  width: 100%;
+  left: 0;
+  top: rem-calc(58);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-top: rem-calc(25);
+  padding-bottom: rem-calc(50);
+  backface-visibility: hidden;
+  transition: transform .4s 0s, visibility 0s .4s;
+  visibility: hidden;
+  transform: translate3d(-100%, 0, 0);
+
+  @include breakpoint(large) {
+    background-color: transparent;
+    position: relative;
+    width: auto;       
+    height: auto;
+    left: auto;
+    top: auto;
+    padding: 0;
+    transform: translate3d(0, 0, 0);
+    overflow: visible;
+    pointer-events: all;
+    visibility: visible;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+
+  @include when-inside('.show-menu') {
+    pointer-events: all;
+    visibility: visible;
+    transition: transform .4s 0s, visibility 0s 0s;
     -webkit-overflow-scrolling: touch;
-    padding-top: rem-calc(25);
-    padding-bottom: rem-calc(50);
-    backface-visibility: hidden;
-    transition: transform .4s 0s, visibility 0s .4s;
-    visibility: hidden;
-    transform: translate3d(-100%, 0, 0);
-
-    @include breakpoint(large) {
-        background-color: transparent;
-        position: relative;
-        width: auto;       
-        height: auto;
-        left: auto;
-        top: auto;
-        padding: 0;
-        transform: translate3d(0, 0, 0);
-        overflow: visible;
-        pointer-events: all;
-        visibility: visible;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: flex-start;
-    }
-
-
-    @include when-inside('.show-menu') {
-        pointer-events: all;
-        visibility: visible;
-        transition: transform .4s 0s, visibility 0s 0s;
-        -webkit-overflow-scrolling: touch;
-        transform: translate3d(0, 0, 0);
-        overflow: visible;
-    }
+    transform: translate3d(0, 0, 0);
+    overflow: visible;
+  }
 }
 
 /*
 * Menu
 */
 .nav-menu > .main-menu {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  text-align: center;
+  @include breakpoint(large) {
+    flex-flow: row nowrap;
+  }
+
+  > li {
     position: relative;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-start;
-    text-align: center;
+    padding: rem-calc(5);
     @include breakpoint(large) {
-        flex-flow: row nowrap;
+      padding: 0;
+    }
+    &.is-active > a{
+      @include font-bold;
+      color: #fff;
+      @include breakpoint(large) {
+        color: #000;
+      }
+    }
+    &:hover > a{
+      color: #fff;
+      @include breakpoint(large) {
+        color: #000;
+      }
+    }
+  }
+
+  > li > a {
+    @include font-regular;
+    @include letter-spacing(220);
+    text-align: center;
+    position: relative;
+    transition: all 0.35s ease;
+    display: inline-block;
+    vertical-align: middle;
+    color: rgba(#fff,0.5);
+    text-transform: uppercase;
+    line-height: 1;
+    font-size: rem-calc(16);
+    padding: rem-calc(15);
+    @include breakpoint(large) {
+      color: #999;
+      font-size: rem-calc(14);
+      padding: rem-calc(15);
     }
 
-    > li {
-        position: relative;
-        padding: rem-calc(5);
-        @include breakpoint(large) {
-            padding: 0;
-        }
-        &.is-active > a{
-            @include font-semi-bold;
-            color: #fff;
-            @include breakpoint(large) {
-                color: #000;
-            }
-        }
-        &:hover > a{
-            color: #fff;
-            @include breakpoint(large) {
-                color: #000;
-            }
-        }
+    @include breakpoint(xlarge) {
+      padding: rem-calc(20);
     }
-
-    > li > a {
-        @include font-regular;
-        @include letter-spacing(220);
-        text-align: center;
-        position: relative;
-        transition: all 0.35s ease;
-        display: inline-block;
-        vertical-align: middle;
-        color: rgba(#fff,0.5);
-        text-transform: uppercase;
-        line-height: 1;
-        font-size: rem-calc(16);
-        padding: rem-calc(15);
-        @include breakpoint(large) {
-            color: #999;
-            font-size: rem-calc(14);
-            padding: rem-calc(15);
-        }
-        
-        @include breakpoint(xlarge) {
-            padding: rem-calc(20);
-        }
-        //
-        &.is-active{
-            @include font-semi-bold;
-            color: #fff;
-            @include breakpoint(large) {
-                color: #000;
-            }
-        }
-        &:hover {
-            color: #fff;
-            @include breakpoint(large) {
-                color: #000;
-            }
-        }
+    //
+    &.is-active{
+      @include font-bold;
+      color: #fff;
+      @include breakpoint(large) {
+        color: #000;
+      }
     }
+    &:hover {
+      color: #fff;
+      @include breakpoint(large) {
+        color: #000;
+      }
+    }
+  }
 }
 
 
@@ -141,66 +140,66 @@ body.show-menu {
 * Nav buttom
 */
 .nav-button{
-    transition: all 0.5s ease;
-    position: relative;
-    cursor: pointer;
-    outline: none;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    z-index: 50;
-    @include breakpoint(large) {
-        display: none;
-    }
+  transition: all 0.5s ease;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 50;
+  @include breakpoint(large) {
+    display: none;
+  }
 
-    &:hover{
-        background-color: transparent;
-        > .nav-button-text{
-            color: #000;
-        }
-        > .nav-button-ico{
-            color: #000;
-            .fa-bars{
-                color: #000;
-            }
-        }
-    }
-
-    &:focus,
-        &.active{
-        background-color: transparent;
-        > .nav-button-text{
-            color: #000;
-        }
-        > .nav-button-ico{
-            color: #000;
-            .fa-bars{
-                color: #000;
-            }
-        }
-    }
+  &:hover{
+    background-color: transparent;
     > .nav-button-text{
-        transition: all 0.5s ease;
-        font-size: rem-calc(10);
-        text-transform: uppercase;        
-        color: #000;
-        line-height: 0;
-        margin-top: 2px;
+      color: #000;
     }
-
     > .nav-button-ico{
-        transition: all 0.5s ease;
+      color: #000;
+      .fa-bars{
         color: #000;
-        font-size: rem-calc(16);        
-        margin-left: rem-calc(10);
-        @include breakpoint(large){
-            font-size: rem-calc(22);        
-            margin-left: rem-calc(20);
-        }
-
-        .fa-bars{
-            transition: all 0.35s ease;
-        }
+      }
     }
+  }
+
+  &:focus,
+    &.active{
+    background-color: transparent;
+    > .nav-button-text{
+      color: #000;
+    }
+    > .nav-button-ico{
+      color: #000;
+      .fa-bars{
+        color: #000;
+      }
+    }
+  }
+  > .nav-button-text{
+    transition: all 0.5s ease;
+    font-size: rem-calc(10);
+    text-transform: uppercase;        
+    color: #000;
+    line-height: 0;
+    margin-top: 2px;
+  }
+
+  > .nav-button-ico{
+    transition: all 0.5s ease;
+    color: #000;
+    font-size: rem-calc(16);        
+    margin-left: rem-calc(10);
+    @include breakpoint(large){
+      font-size: rem-calc(22);        
+      margin-left: rem-calc(20);
+    }
+
+    .fa-bars{
+      transition: all 0.35s ease;
+    }
+  }
 }

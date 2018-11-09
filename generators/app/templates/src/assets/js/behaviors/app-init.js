@@ -5,7 +5,7 @@ $(window).on("load", function () {
           $equalizer = $('[data-equalizer]');
 
 
-  //Foundation init
+  // Foundation init
   $(document).foundation();
 
   //foundation version
@@ -28,5 +28,19 @@ $(window).on("load", function () {
       $equalizer.filter('[data-equalizer]').foundation('_reflow');
     }
   });
-  
+
+  // test: toast animation
+  (function ($, window, document, undefined) {
+    const classes = ['success', 'warning', 'error', 'info'];
+    let randomNumber = Math.floor(Math.random() * classes.length);
+    const $toast = $('.toast');
+    if ($toast.length > 0) {
+      $toast.addClass(classes[randomNumber]).addClass('show');
+      setTimeout(function () {
+        $toast.removeClass('show');
+      }, 5000);
+    }
+  })(jQuery, window, document);
+
 });
+

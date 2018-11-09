@@ -23,8 +23,10 @@ PATHS:
   # Paths to Sass libraries, which can then be loaded with @import
   sass:
     - "node_modules/foundation-sites/scss"
-    - "node_modules/owl.carousel/src/scss"
+    - "node_modules/owl.carousel/src/scss"    
+    - "node_modules/magnific-popup/src/css"
     - "node_modules/@fortawesome/fontawesome-free/scss"
+    - "node_modules/motion-ui/src"
   # Paths to JavaScript entry points for webpack to bundle modules
   entries:
     - "src/assets/js/app.js"

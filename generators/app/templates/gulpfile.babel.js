@@ -15,9 +15,8 @@ import log from 'fancy-log';
 import colors from 'ansi-colors';
 
 const rename = require("gulp-rename");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -82,6 +81,10 @@ function clean(done) {
 function copy() {
   return gulp.src(PATHS.assets)
           .pipe(gulp.dest(PATHS.dist + '/assets'));
+}
+
+function fonts() {
+  return gulp.src(['node_modules/@fortawesome/fontawesome-free/webfonts/*.*']).pipe(gulp.dest(PATHS.dist + '/assets/fonts/fontawesome'));
 }
 
 // Compile Sass into CSS
@@ -168,29 +171,8 @@ const webpack = {
           use: ['modernizr-loader', 'json-loader']
         },
         {
-          test: /\.scss$/,
-          use: ExtractTextPlugin.extract({
-            fallback: "style-loader",
-            use: [{
-                loader: 'css-loader',
-                options: {
-                  url: false,
-                  minimize: true,
-                  sourceMap: false
-                }
-              },
-              {
-                loader: 'sass-loader',
-                options: {
-                  sourceMap: false
-                }
-              }
-            ]
-          })
-        },
-        {
           test: /\.js$/,
-          exclude: /(node_modules|bower_components)/,
+          exclude: /node_modules(?![\\\/]foundation-sites)/,
           use: {
             loader: 'babel-loader'
           }
@@ -212,12 +194,18 @@ const webpack = {
     mode: 'production',
     optimization: {
       minimizer: [
-        new UglifyJsPlugin({
-          uglifyOptions: {
-            output: {
-              comments: false,
-              beautify: false
-            }
+        new TerserPlugin({
+          terserOptions: {
+            warnings: false,
+            mangle: true,
+            module: false,
+            output: null,
+            toplevel: false,
+            nameCache: null,
+            ie8: false,
+            keep_classnames: undefined,
+            keep_fnames: false,
+            safari10: false
           }
         })
       ],
@@ -240,10 +228,6 @@ const webpack = {
         $: "jquery",
         jQuery: "jquery",
         "window.jQuery": "jquery"
-      }),
-      new ExtractTextPlugin({
-        filename: "../css/vendors.min.css",
-        allChunks: true
       })
     ].filter(plugin => (plugin))
   },
@@ -292,9 +276,23 @@ gulp.task('webpack:watch', webpack.watch);
 // In production, the images are compressed
 function images() {
   return gulp.src('src/assets/images/**/*')
-          .pipe($.if(PRODUCTION, $.imagemin({
-            progressive: true
-          })))
+          .pipe($.if(PRODUCTION, $.imagemin([
+            $.imagemin.jpegtran({
+              progressive: true
+            }),
+            $.imagemin.optipng({
+              optimizationLevel: 5
+            }),
+            $.imagemin.gifsicle({
+              interlaced: true
+            }),
+            $.imagemin.svgo({
+              plugins: [
+                {cleanupAttrs: true},
+                {removeComments: true}
+              ]
+            })
+          ])))
           .pipe(gulp.dest(PATHS.dist + '/assets/images'));
 }
 
@@ -330,24 +328,22 @@ function reload(done) {
 
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
-  gulp.watch(PATHS.assets, copy);
+  //gulp.watch(PATHS.assets, copy);
+  gulp.watch(PATHS.assets, gulp.series(copy, fonts));
   gulp.watch('src/assets/scss/**/*.scss', sass)
           .on('change', path => log('File ' + colors.bold(colors.magenta(path)) + ' changed.'))
           .on('unlink', path => log('File ' + colors.bold(colors.magenta(path)) + ' was removed.'));
-  gulp.watch('**/*.php', reload)
+  gulp.watch(['**/*.html', '**/*.php'], reload)
           .on('change', path => log('File ' + colors.bold(colors.magenta(path)) + ' changed.'))
           .on('unlink', path => log('File ' + colors.bold(colors.magenta(path)) + ' was removed.'));
   gulp.watch('src/assets/images/**/*', gulp.series(images, browser.reload));
 }
 
 // Build the "dist" folder by running all of the below tasks
-gulp.task('build',
-        gulp.series(clean, gulp.parallel(sass, 'webpack:build', images, copy)));
+gulp.task('build', gulp.series(clean, gulp.parallel(sass, 'webpack:build', images, copy, fonts)));
 
 // Build the site, run the server, and watch for file changes
-gulp.task('default',
-        gulp.series('build', server, gulp.parallel('webpack:watch', watch)));
+gulp.task('default', gulp.series('build', server, gulp.parallel('webpack:watch', watch)));
 
 // Package task
-gulp.task('package',
-        gulp.series('build', archive));
+gulp.task('package', gulp.series('build', archive));

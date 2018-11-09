@@ -1,6 +1,7 @@
-/*
-** Home Slider
+/**
+* Home Slider
 */
+
 /* banner */
 .home-banner-container{
   position: relative;
@@ -15,9 +16,8 @@
     background-color: #000;
     display: block;        
     height: rem-calc(340);
-    // backface-visibility: hidden;
     line-height: 1.2;
-
+    
     @include breakpoint(large){
       height: rem-calc(440);
     }

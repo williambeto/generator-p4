@@ -1,33 +1,45 @@
 @charset "UTF-8";
 
-/* Settings */
+/**
+ * variables
+ */
 @import "settings/variables";
 
-/* Functions, mixins etc. */
+/**
+ * Functions, mixins etc.
+ */
 @import "tools/functions";
 @import "tools/mixins";
 
-/* Base / Generic */
+/**
+ * Vendors
+ */
+@import 'vendors/magnific-popup';
+@import 'vendors/owl-carousel';
+@import 'vendors/font-awesome';
+@import 'vendors/datepicker';
+
+/**
+ * Base / Generic
+ */
 @import 'base/fonts';
 @import 'base/typography';
 
-/* Vendor */
-@import 'vendors/font-awesome';
-@import 'vendors/magnific-popup';
-@import 'vendors/owl-carousel';
-@import 'vendors/datepicker';
-
-/* Elements */
+/**
+ * Elements
+ */
 @import 'elements/header';
 @import 'elements/logo';
 @import 'elements/primary-menu';
 @import 'elements/footer';
+@import 'elements/home-slider';
 
-/* Pages */
+/**
+ * Pages
+ */
 @import 'pages/template';
-@import 'pages/home';
-@import 'pages/colecoes';
 
-/* Components */
-@import 'components/buttons';
-@import 'components/forms';
+/**
+ * Components
+ */
+@import 'components/toast-notifications';

@@ -1,7 +1,6 @@
-<?php
-include './functions.php';
+<?php include './functions.php';
 /*  start the output buffer  */
-ob_start('compress_page');
+// ob_start('compress_page');
 ?>
 <!doctype html>
 <html class="no-js" lang="pt-br">
@@ -12,7 +11,6 @@ ob_start('compress_page');
     <title><?php echo $projetc_data['site_name'] ?></title>
 
     <meta name="description" content="<?php echo $projetc_data['site_name'] ?>">
-    <meta name="author" content="https://plus.google.com/u/0/+Jos%C3%A9Willams-williambeto?rel=author">
 
     <!-- Social: Facebook / Open Graph -->
     <meta property="og:url" content="<?php echo $projetc_data['site_url'] ?>">
@@ -28,7 +26,7 @@ ob_start('compress_page');
     <!-- Social: Google+ / Schema.org  -->
     <meta itemprop="name" content="<?php echo $projetc_data['site_name'] ?>">
     <meta itemprop="description" content="<?php echo $projetc_data['site_description'] ?>">
-    <meta itemprop="image" content="<?php echo $projetc_data['site_url'] ?>/dist/assets/images/apoio/banner-1920x645.jpg">
+    <meta itemprop="image" content="<?php echo $projetc_data['site_url'] ?>/dist/assets/images/logo/logo-instituto.svg">
 
     <!-- favicon -->
     <link rel="shortcut icon" href="dist/assets/images/favicon/favicon.ico" type="image/x-icon">
@@ -49,19 +47,32 @@ ob_start('compress_page');
     <link rel="manifest" href="dist/assets/images/favicon/manifest.json">
 
     <meta name="application-name" content="<?php echo $projetc_data['site_name'] ?>">
-    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#fff">
     <meta name="msapplication-TileImage" content="dist/assets/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#85599a">
+    
+     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
 
     <!-- Global Stylesheet -->
     <link rel="stylesheet" href="dist/assets/css/app.min.css">
-
   </head>
 
-  <body>
-    <?php require_once './inc_loading.php'; ?>
+  <body class="<?php echo $deviceType . ' ' . $page_name; ?>">
+     <?php require_once './inc_loading.php'; ?>
+    <!--[if lt IE 9]>
+        <div class="browserupgrade"> Seu navegador está <strong>desatualizado</strong>. 
+            Ele possui falhas de segurança e pode apresentar problemas para exibir este e outros websites.
+            <strong>
+                <a href="http://browsehappy.com/" title="Veja como atualizar o seu navegador" target="_blank">
+                    Veja como atualizar o seu navegador
+                </a>
+            </strong>.
+        </div>
+    <![endif]-->
     
-    <header id="header-container" class="header-container">
+    <header class="header-container">
       <div class="header-content">
         <a href="./" title="<?php echo $projetc_data['site_name'] ?>" class="logo">
           <img data-interchange="[dist/assets/images/logo/logo-icon.png, small], [dist/assets/images/logo/logo.png, xlarge]" 
@@ -73,9 +84,7 @@ ob_start('compress_page');
             <?php
             $main_menu = array(
                 'Home',
-                'Sobre',
-                'Coleções',
-                'Contato'
+                'Kitchen Sink',
             );
             ?>
             <?php foreach ($main_menu as $menu_item): ?>
@@ -87,21 +96,6 @@ ob_start('compress_page');
             <?php endforeach; ?>
           </ul>
         </nav>
-
-        <div class="social-top">
-          <a href="#facebook" title="facebook" class="social-link">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#instagram" title="instagram" class="social-link">
-            <i class="fab fa-instagram"></i>
-          </a>
-
-          <div class="phone-top">
-            <i class="fas fa-phone"></i> 
-            <span>(81) 9.9999.4087</span>
-          </div>
-        </div>
-
         <!-- open menu on mobile -->
         <button class="nav-button" data-js-primary-nav-toggle>                    
           <span class="nav-button-text">Menu</span>

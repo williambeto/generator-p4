@@ -1,5 +1,5 @@
 // fdatepicker variables and their defaults
-$fdatepicker-ui-primary: #4d885f !default;
+$fdatepicker-ui-primary: $brand-color !default;
 $fdatepicker-ui-color: #000 !default;
 $fdatepicker-ui-bg: #fff !default;
 $fdatepicker-ui-disabled: #eee !default;
@@ -187,6 +187,6 @@ $fdatepicker-inline-width: 220px !default;
 
 .datepicker td.active.day, 
 .datepicker td.active.year {
-    background: #4d885f;
-    color: #fff;
+  background: $brand-color;
+  color: #fff;
 }

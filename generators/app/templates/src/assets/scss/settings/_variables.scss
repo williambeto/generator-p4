@@ -1,16 +1,12 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
-// -----------------------------------------------------------------------------
-// This file contains all application-wide Sass variables.
-// -----------------------------------------------------------------------------
-/// Regular font family
-/// @type List
-$base-font-family: 'Segoe UI', sans-serif;
-$secondary-font-family: 'Segoe UI',sans-serif;
-$title-font-family: 'Segoe UI',sans-serif;
 
-/// cores do tema
+/// Regular font family
+$primary-font-family: 'Segoe UI', sans-serif !default;
+$secondary-font-family: 'Segoe UI', sans-serif !default;
+
+/// colors
 $text-color: #333 !default;
 $title-color: #000 !default;
 $sub-title-color: #333 !default;
@@ -65,8 +61,5 @@ $colors:(
 /// Relative or absolute URL where all assets are served from
 /// @type String
 /// @example scss - When using a CDN
-/// $base-url: 'http://cdn.example.com/assets/';
+/// $base-url: 'http://cdn.example.com/dist/assets/';
 $base-url: 'dist/assets/' !default;
-
-/// fontawesome fonts path
-//$fa-font-path:   "../fonts/fontawesome";

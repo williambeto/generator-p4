@@ -1,0 +1,126 @@
+/**
+* Toast Notifications
+*/
+
+.toast {
+  visibility: hidden;
+  max-width: rem-calc(50);
+  height: rem-calc(50);
+  margin: auto;
+  text-align: center;
+  border-radius: rem-calc(2);
+  position: fixed;
+  z-index: 1000;
+  left:50%;
+  transform:translate(-50%);
+  bottom: rem-calc(30);
+  font-size: rem-calc(16);
+  white-space: nowrap;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  &.success{
+    > .toast-icon{
+      background-color: #3f9c35;
+    }
+  }
+
+  &.warning{
+    > .toast-icon{
+      background-color: #ec7a08;
+    }
+  }
+
+  &.error{
+    > .toast-icon{
+      background-color: #c00;
+    }
+  }
+
+  &.info{
+    > .toast-icon{
+      background-color: #8b8d8f;
+    }
+  }
+
+  &.show {
+    visibility: visible;
+    animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
+  }
+}
+
+.toast-icon{
+  flex: 0 1 auto;
+  position: relative;
+  width: rem-calc(50);
+  height: rem-calc(50);
+  color: rgba(255,255,255,.75);
+  background-color: #8b8d8f;
+
+  > .icon{
+    @include absolute-center;
+  }
+}
+
+.toast-text{
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* animações */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: rem-calc(30); opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: rem-calc(30); opacity: 1;}
+}
+
+@-webkit-keyframes expand {
+  from {min-width: rem-calc(50)} 
+  to {min-width: rem-calc(300)}
+}
+
+@keyframes expand {
+  from {min-width: rem-calc(50)}
+  to {min-width: rem-calc(300)}
+}
+@-webkit-keyframes stay {
+  from {min-width: rem-calc(300)} 
+  to {min-width: rem-calc(300)}
+}
+
+@keyframes stay {
+  from {min-width: rem-calc(300)}
+  to {min-width: rem-calc(300)}
+}
+
+@-webkit-keyframes shrink {
+  from {min-width: rem-calc(300);} 
+  to {min-width: rem-calc(50);}
+}
+
+@keyframes shrink {
+  from {min-width: rem-calc(300);} 
+  to {min-width: rem-calc(50);}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: rem-calc(30); opacity: 1;} 
+  to {bottom: rem-calc(60); opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: rem-calc(30); opacity: 1;}
+  to {bottom: rem-calc(60); opacity: 0;}
+}

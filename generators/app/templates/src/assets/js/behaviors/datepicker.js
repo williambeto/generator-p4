@@ -6,7 +6,7 @@ $(window).on("load", function () {
   const options = {language: 'pt-br'};
   if ($dpTrigger.length > 0) {
     $dpTrigger.fdatepicker(options).on('changeDate', function (ev) {
-      // console.log(ev.date);
+      console.log(ev.date);
     });
   }
 });
