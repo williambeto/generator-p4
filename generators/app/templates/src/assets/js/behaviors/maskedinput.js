@@ -1,4 +1,4 @@
-import 'jquery.maskedinput';
+import 'jquery.maskedinput/src/jquery.maskedinput';
 
 //do jQuery stuff when DOM is ready
 $(function () {

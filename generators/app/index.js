@@ -30,7 +30,6 @@ module.exports = class extends Generator {
   }
 
   install() {
-    // this.spawnCommand('composer', ['install']);
     this.installDependencies();
   }
 };
