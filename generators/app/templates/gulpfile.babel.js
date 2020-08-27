@@ -80,7 +80,7 @@ function clean(done) {
 // This task skips over the "images", "js", and "scss" folders, which are parsed separately
 function copy() {
   return gulp.src(PATHS.assets)
-          .pipe(gulp.dest(PATHS.dist + '/assets'));
+    .pipe(gulp.dest(PATHS.dist + '/assets'));
 }
 
 // Copy fontawesome files out of the assets folder
@@ -92,36 +92,36 @@ function fonts() {
 // In production, the CSS is compressed
 function sass() {
   return gulp.src('src/assets/scss/app.scss')
-          .pipe($.sourcemaps.init())
-          .pipe($.sass({
-            includePaths: PATHS.sass
-          })
-                  .on('error', $.sass.logError))
-          .pipe($.autoprefixer({
-            overrideBrowserslist: COMPATIBILITY
-          }))
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      includePaths: PATHS.sass
+    })
+      .on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+      overrideBrowserslist: COMPATIBILITY
+    }))
 
-          .pipe($.cleanCss({
-            compatibility: 'ie9',
-            level: {
-              1: {
-                specialComments: 0 // denotes a number of /*! ... */ comments preserved; defaults to `all`
-              },
-              2: {
-                mergeMedia: false // controls `@media` merging; defaults to true
-              }
-            }
-          }))
-          .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-          .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev()))
-          .pipe(rename('app.min.css'))
-          .pipe(gulp.dest(PATHS.dist + '/assets/css'))
-          .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev.manifest()))
-          .pipe(rename('app.min.css'))
-          .pipe(gulp.dest(PATHS.dist + '/assets/css'))
-          .pipe(browser.reload({
-            stream: true
-          }));
+    .pipe($.cleanCss({
+      compatibility: 'ie9',
+      level: {
+        1: {
+          specialComments: 0 // denotes a number of /*! ... */ comments preserved; defaults to `all`
+        },
+        2: {
+          mergeMedia: false // controls `@media` merging; defaults to true
+        }
+      }
+    }))
+    .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
+    .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev()))
+    .pipe(rename('app.min.css'))
+    .pipe(gulp.dest(PATHS.dist + '/assets/css'))
+    .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev.manifest()))
+    .pipe(rename('app.min.css'))
+    .pipe(gulp.dest(PATHS.dist + '/assets/css'))
+    .pipe(browser.reload({
+      stream: true
+    }));
 }
 
 // Combine JavaScript into one file
@@ -130,20 +130,20 @@ const webpack = {
   config: {
     module: {
       rules: [{
-          test: /\.modernizrrc.js$/,
-          use: ['modernizr-loader']
-        },
-        {
-          test: /\.modernizrrc(\.json)?$/,
-          use: ['modernizr-loader', 'json-loader']
-        },
-        {
-          test: /\.js$/,
-          exclude: /node_modules(?![\\\/]foundation-sites)/,
-          use: {
-            loader: 'babel-loader'
-          }
+        test: /\.modernizrrc.js$/,
+        use: ['modernizr-loader']
+      },
+      {
+        test: /\.modernizrrc(\.json)?$/,
+        use: ['modernizr-loader', 'json-loader']
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules(?![\\\/]foundation-sites)/,
+        use: {
+          loader: 'babel-loader'
         }
+      }
       ]
     },
     output: {
@@ -160,13 +160,19 @@ const webpack = {
     },
     mode: 'production',
     optimization: {
+      minimize: true,
       minimizer: [
         new TerserPlugin({
+          extractComments: false,
+          cache: false,
+          parallel: true,
           terserOptions: {
             warnings: false,
             mangle: true,
             module: false,
-            output: null,
+            output: {
+              comments: false
+            },
             toplevel: false,
             nameCache: null,
             ie8: false,
@@ -183,7 +189,7 @@ const webpack = {
         minSize: 0, // enforce all
         cacheGroups: {
           commons: {
-            test: /(node_modules|bower_components)/,
+            test: /[\\/]node_modules[\\/]/,
             name: "vendors",
             chunks: "all"
           }
@@ -209,12 +215,12 @@ const webpack = {
 
   build() {
     return gulp.src(PATHS.entries)
-            .pipe(named())
-            .pipe(webpackStream(webpack.config, webpack2))
-            .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev()))
-            .pipe(gulp.dest(PATHS.dist + '/assets/js'))
-            .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev.manifest()))
-            .pipe(gulp.dest(PATHS.dist + '/assets/js'));
+      .pipe(named())
+      .pipe(webpackStream(webpack.config, webpack2))
+      .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev()))
+      .pipe(gulp.dest(PATHS.dist + '/assets/js'))
+      .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev.manifest()))
+      .pipe(gulp.dest(PATHS.dist + '/assets/js'));
   },
 
   watch() {
@@ -224,15 +230,15 @@ const webpack = {
     });
 
     return gulp.src(PATHS.entries)
-            .pipe(named())
-            .pipe(webpackStream(watchConfig, webpack2, webpack.changeHandler)
-                    .on('error', (err) => {
-                      log('[webpack:error]', err.toString({
-                        colors: true
-                      }));
-                    })
-                    )
-            .pipe(gulp.dest(PATHS.dist + '/assets/js'));
+      .pipe(named())
+      .pipe(webpackStream(watchConfig, webpack2, webpack.changeHandler)
+        .on('error', (err) => {
+          log('[webpack:error]', err.toString({
+            colors: true
+          }));
+        })
+      )
+      .pipe(gulp.dest(PATHS.dist + '/assets/js'));
   }
 };
 
@@ -242,25 +248,34 @@ gulp.task('webpack:watch', webpack.watch);
 // Copy images to the "dist" folder
 // In production, the images are compressed
 function images() {
-  return gulp.src('src/assets/images/**/*')
-          .pipe($.if(PRODUCTION, $.imagemin([
-            $.imagemin.jpegtran({
-              progressive: true
-            }),
-            $.imagemin.optipng({
-              optimizationLevel: 5
-            }),
-            $.imagemin.gifsicle({
-              interlaced: true
-            }),
-            $.imagemin.svgo({
-              plugins: [
-                {cleanupAttrs: true},
-                {removeComments: true}
-              ]
-            })
-          ])))
-          .pipe(gulp.dest(PATHS.dist + '/assets/images'));
+  return gulp
+    .src("src/assets/images/**/*")
+    .pipe(
+      $.if(
+        PRODUCTION,
+        $.imagemin([
+          $.imagemin.mozjpeg({
+            quality: 80,
+            progressive: true
+          }),
+          $.imagemin.optipng({
+            optimizationLevel: 5
+          }),
+          $.imagemin.gifsicle({
+            interlaced: true
+          }),
+          $.imagemin.svgo({
+            plugins: [
+              { cleanupAttrs: true },
+              { removeComments: true },
+              { removeViewBox: true },
+              { cleanupIDs: false }
+            ]
+          })
+        ])
+      )
+    )
+    .pipe(gulp.dest(PATHS.dist + "/assets/images"));
 }
 
 // Create a .zip archive of the theme
@@ -270,8 +285,8 @@ function archive() {
   var title = pkg.name + '_' + time + '.zip';
 
   return gulp.src(PATHS.package)
-          .pipe($.zip(title))
-          .pipe(gulp.dest('packaged'));
+    .pipe($.zip(title))
+    .pipe(gulp.dest('packaged'));
 }
 
 
@@ -298,11 +313,11 @@ function watch() {
   //gulp.watch(PATHS.assets, copy);
   gulp.watch(PATHS.assets, gulp.series(copy, fonts));
   gulp.watch('src/assets/scss/**/*.scss', sass)
-          .on('change', path => log('File ' + colors.bold(colors.magenta(path)) + ' changed.'))
-          .on('unlink', path => log('File ' + colors.bold(colors.magenta(path)) + ' was removed.'));
+    .on('change', path => log('File ' + colors.bold(colors.magenta(path)) + ' changed.'))
+    .on('unlink', path => log('File ' + colors.bold(colors.magenta(path)) + ' was removed.'));
   gulp.watch(['**/*.html', '**/*.php'], reload)
-          .on('change', path => log('File ' + colors.bold(colors.magenta(path)) + ' changed.'))
-          .on('unlink', path => log('File ' + colors.bold(colors.magenta(path)) + ' was removed.'));
+    .on('change', path => log('File ' + colors.bold(colors.magenta(path)) + ' changed.'))
+    .on('unlink', path => log('File ' + colors.bold(colors.magenta(path)) + ' was removed.'));
   gulp.watch('src/assets/images/**/*', gulp.series(images, browser.reload));
 }
 

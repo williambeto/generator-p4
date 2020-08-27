@@ -1,0 +1,368 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "53aaabce54258be27807cba7b51c443c",
+    "packages": [
+        {
+            "name": "composer/installers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "c462a693445b8f6913e95c2ea774d60cf42f64ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/c462a693445b8f6913e95c2ea774d60cf42f64ec",
+                "reference": "c462a693445b8f6913e95c2ea774d60cf42f64ec",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.6.* || 2.0.*@dev",
+                "composer/semver": "^1 || ^3",
+                "phpunit/phpunit": "^4.8.36",
+                "sebastian/comparator": "^1.2.4",
+                "symfony/process": "^2.3"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "MantisBT",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Thelia",
+                "Whmcs",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "joomla",
+                "known",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "mediawiki",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "sylius",
+                "symfony",
+                "typo3",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-06-05T09:23:41+00:00"
+        },
+        {
+            "name": "jbzoo/data",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JBZoo/Data.git",
+                "reference": "1e1238e915b942b4147ea8746760423f3cbdf20b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JBZoo/Data/zipball/1e1238e915b942b4147ea8746760423f3cbdf20b",
+                "reference": "1e1238e915b942b4147ea8746760423f3cbdf20b",
+                "shasum": ""
+            },
+            "require": {
+                "jbzoo/utils": "^2.2.1",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "jbzoo/phpunit": "^2.2.1",
+                "jbzoo/profiler": "^1.0.5",
+                "satooshi/php-coveralls": "^1.0.2",
+                "symfony/yaml": "^3.3.13"
+            },
+            "suggest": {
+                "symfony/yaml": "^3.3.13"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "JBZoo\\Data\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SmetDenis",
+                    "email": "denis@jbzoo.com",
+                    "role": "lead"
+                }
+            ],
+            "description": "Extended implementation of ArrayObject",
+            "keywords": [
+                "array",
+                "arrayobject",
+                "config",
+                "data",
+                "ini",
+                "json",
+                "params",
+                "yml"
+            ],
+            "time": "2018-12-03T16:32:55+00:00"
+        },
+        {
+            "name": "jbzoo/utils",
+            "version": "2.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JBZoo/Utils.git",
+                "reference": "549ca27f7ced373afe0bf1847579656c730ea702"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JBZoo/Utils/zipball/549ca27f7ced373afe0bf1847579656c730ea702",
+                "reference": "549ca27f7ced373afe0bf1847579656c730ea702",
+                "shasum": ""
+            },
+            "require": {
+                "jbzoo/data": "^1.6|^2.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "jbzoo/phpunit": "^2.2",
+                "jbzoo/profiler": "^1.0",
+                "php-coveralls/php-coveralls": "^2.1",
+                "symfony/polyfill-mbstring": "^1.10",
+                "symfony/process": "^3.3|^4.1"
+            },
+            "suggest": {
+                "ext-mbstring": "Provides multibyte specific string functions",
+                "symfony/polyfill-mbstring": "For UTF-8 if ext-mbstring disabled",
+                "symfony/process": "For Cli::exec() method only"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/defines.php"
+                ],
+                "psr-4": {
+                    "JBZoo\\Utils\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SmetDenis",
+                    "email": "denis@jbzoo.com",
+                    "role": "lead"
+                },
+                {
+                    "name": "Brandon Wamboldt",
+                    "email": "brandon.wamboldt@gmail.com"
+                },
+                {
+                    "name": "Luís Nóbrega",
+                    "email": "luis.barros.nobrega@gmail.com"
+                }
+            ],
+            "description": "A collection of useful PHP functions, mini classes and snippets that you need every day.",
+            "keywords": [
+                "array",
+                "cli",
+                "collection",
+                "command line",
+                "dates",
+                "email",
+                "env",
+                "environment",
+                "filesystem",
+                "filter",
+                "helper",
+                "helpers",
+                "http",
+                "image",
+                "mbstring",
+                "misc",
+                "serialize",
+                "slugify",
+                "string",
+                "timer",
+                "url",
+                "utility",
+                "utils"
+            ],
+            "time": "2019-11-21T09:34:54+00:00"
+        },
+        {
+            "name": "mobiledetect/mobiledetectlib",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/serbanghita/Mobile-Detect.git",
+                "reference": "d5d87b40f52d3b6cab9b4485153e4ddfcb63b8c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/d5d87b40f52d3b6cab9b4485153e4ddfcb63b8c6",
+                "reference": "d5d87b40f52d3b6cab9b4485153e4ddfcb63b8c6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8.35||~5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Mobile_Detect.php"
+                ],
+                "psr-0": {
+                    "Detection": "namespaced/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Serban Ghita",
+                    "email": "serbanghita@gmail.com",
+                    "homepage": "http://mobiledetect.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+            "homepage": "https://github.com/serbanghita/Mobile-Detect",
+            "keywords": [
+                "detect mobile devices",
+                "mobile",
+                "mobile detect",
+                "mobile detector",
+                "php mobile detect"
+            ],
+            "time": "2019-10-14T09:15:03+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

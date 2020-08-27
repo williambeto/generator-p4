@@ -1,13 +1,9 @@
 {
   "name": "generator-p4",
-  "version": "2.3.0",
+  "version": "3.0.1",
   "description": "Yeoman generator for Foundation 6 + Sass + Gulp + Webpack + Composer + PHP",
   "homepage": "https://github.com/williambeto/generator-p4",
-  "author": {
-    "name": "José Willams",
-    "email": "williambeto@hotmail.com",
-    "url": "https://josewillams.com/"
-  },
+  "author": "José Willams <williambeto@hotmail.com> (https://josewillams.com/)",
   "files": [
     "generators"
   ],
@@ -95,5 +91,8 @@
     "type": "git",
     "url": "git+https://github.com/williambeto/generator-p4.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williambeto/generator-p4/issues"
+  }
 }

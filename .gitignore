@@ -1,3 +1,14 @@
-node_modules
 coverage
 /nbproject/private/
+nbproject/
+vendor/
+bower_components/
+node_modules/
+packaged/
+wpcs/
+.vscode/
+*.DS_Store
+*.log
+*.sass-cache
+*.log
+*.swp

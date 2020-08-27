@@ -1,6 +1,6 @@
 {
-  "name": "projeto",
-  "description": "projeto",
+  "name": "neurateam/scaffolding-foundation",
+  "description": "Front-end scaffolding com foundation, webpack e composer",
   "type": "web-site",
   "minimum-stability": "dev",
   "license": "MIT",
