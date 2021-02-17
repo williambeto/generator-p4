@@ -164,7 +164,6 @@ const webpack = {
       minimizer: [
         new TerserPlugin({
           extractComments: false,
-          cache: false,
           parallel: true,
           terserOptions: {
             warnings: false,
@@ -183,7 +182,6 @@ const webpack = {
         })
       ],
       runtimeChunk: false,
-      occurrenceOrder: true,
       splitChunks: {
         name: false,
         minSize: 0, // enforce all
@@ -191,6 +189,7 @@ const webpack = {
           commons: {
             test: /[\\/]node_modules[\\/]/,
             name: "vendors",
+            enforce: true,
             chunks: "all"
           }
         }
